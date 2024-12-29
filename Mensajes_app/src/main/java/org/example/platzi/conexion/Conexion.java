@@ -14,7 +14,7 @@ public class Conexion {
             conexbd = DriverManager.getConnection("jdbc:mysql://localhost:3306/mensajes_app","root","1234");
             // validamos conexion a la bd si es diferente de null
             if (conexbd != null){
-                System.out.println("Conexión Exitosa a la Base de Datos ");
+                System.out.println("get Conection");
             }
         }catch (SQLException e){ //refleja error si no hya conexion
             System.out.println(e);
