@@ -4,10 +4,11 @@ import org.example.platzi.Services.MensajeService;
 import org.example.platzi.conexion.Conexion;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         //leer datos desde consola Scanner
         Scanner sc = new Scanner(System.in);
 
@@ -15,8 +16,8 @@ public class Main {
         do {
             System.out.println("------------------------------");
             System.out.println("Aplicación de Mensajes\n" +
-                    " 1.Crear Mensaje\n 2.Listar Mensaje\n 3.Editar Mensaje\n" +
-                    " 4.Eliminar Mensaje\n 5.Salir");
+                    " 1.Crear Mensaje\n 2.Listar Mensaje\n 3.Eliminar Mensaje\n" +
+                    " 4.Editar Mensaje\n 5.Salir");
             opcion = sc.nextInt();
 
             switch (opcion){
@@ -35,31 +36,10 @@ public class Main {
                 case 5:
                     break;
                 default:
-
+                    System.out.println("Opcion No registra en el menu");
                     break;
             }
-
-
-
-
-
         }while(opcion !=5);
-
-
-
-
-
-
-
-        /*
-        //validamos la conexión creando el objeto y con un try intentamos conectarnos
-        Conexion conexion = new Conexion();
-        try(Connection cnx = conexion.get_connection()){}
-        catch (Exception e) {
-            System.out.println(e)
-        }*/
-
-
 
     }
 }
